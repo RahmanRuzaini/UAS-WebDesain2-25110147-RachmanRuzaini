@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RASA NUSANTARA FEST 2025 - UTS Web Desain 2 | Paket B</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"/>
+  <style>
+    /* =============================================
+       STYLE DASAR SUDAH DISIAPKAN - JANGAN DIUBAH
+       ============================================= */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #faf7f2;
+      color: #000000;
+    }
+    .hero {
+      background: linear-gradient(to right, #000000 50%, #000000 50%);
+      padding: 90px 0 70px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #faf7f2;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .hero h1 span {
+      color: #db1212;
+    }
+    .hero p {
+      color: #8a7a6a;
+      font-size: 1.05rem;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1c1810;
+      border-left: 5px solid #d81515;
+      padding-left: 15px;
+      margin-bottom: 30px;
+    }
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid #ede8e0;
+    }
+    .soal-label {
+      display: inline-block;
+      background: #c94747;
+      color: #1c1810;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 3px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    /* Kartu booth kuliner */
+    .booth-card {
+      background: #fff;
+      border: 1px solid #ede8e0;
+      border-radius: 12px;
+      padding: 22px 18px;
+      height: 100%;
+    }
+    .booth-card .booth-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .booth-card h5 {
+      color: #000000;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .booth-card p {
+      color: #8a7a6a;
+      font-size: 0.82rem;
+    }
+    .booth-card .origin-tag {
+      display: inline-block;
+      background: #fdf3e3;
+      color: #c17f3a;
+      font-size: 0.7rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+    /* Kartu tiket */
+    .ticket-card {
+      background: #fff;
+      border: 1px solid #ede8e0;
+      border-radius: 12px;
+      padding: 26px 20px;
+      height: 100%;
+    }
+    .ticket-card .price {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #000000;
+    }
+    .ticket-card.featured {
+      border: 2px solid #e8a84e;
+      background: #fffbf4;
+    }
+    .ticket-card.featured .price {
+      color: #c17f3a;
+    }
+    .ticket-card ul {
+      list-style: none;
+      padding: 0;
+      font-size: 0.83rem;
+      color: #5a5248;
+    }
+    .ticket-card ul li {
+      padding: 5px 0;
+      border-bottom: 1px solid #f5f0e8;
+    }
+    .ticket-card ul li::before {
+      content: "✓ "; /* Diubah dari "3 " ke simbol check agar sesuai wireframe */
+      color: #e8a84e;
+      font-weight: 700;
+    }
+    /* Footer */
+    footer {
+      background: #000000;
+      text-align: center;
+      padding: 28px;
+      color: #5a5248;
+      font-size: 0.82rem;
+    }
+    /* =============================================
+       TAMBAHKAN CSS KUSTOM KAMU DI BAWAH INI
+       (untuk Soal 3 - Modifikasi Desain)
+       ============================================= */
+  </style>
+</head>
+
+<body>
+<div class="hero">
+  <div class="container">
+    <h1>RASA <span>NUSANTARA</span> FEST 2026</h1>
+    <p>Satu Tempat, Ratusan Cita Rasa dari Seluruh Penjuru Indonesia</p>
+    <p><strong style="color:#c51913;">22–24 Agustus 2026</strong> &nbsp;|&nbsp;
+       <strong style="color:#da1b14;">FCD, Sungai beringin, Tembilahan</strong></p>
+  </div>
+</div>
+
+<section id="booth">
+  <div class="container">
+    <span class="soal-label">Soal 1 — Grid Bootstrap</span>
+    <h2 class="section-title">Booth Kuliner Unggulan</h2>
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="booth-card">
+          <div class="booth-icon">🍜</div>
+          <h5>Mie Aceh Pak Dicky</h5>
+          <p>Mie tebal dengan kuah rempah khas Aceh, tersedia pilihan goreng dan kuah</p>
+          <span class="origin-tag">Aceh</span>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="booth-card">
+          <div class="booth-icon">🍢</div>
+          <h5>Sate Madura Pak Raehan</h5>
+          <p>Sate ayam dan kambing dengan bumbu kacang legendaris turun-temurun</p>
+          <span class="origin-tag">Madura</span>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="booth-card">
+          <div class="booth-icon">🥩</div>
+          <h5>Rendang Bu Nella</h5>
+          <p>Rendang sapi kering dimasak 8 jam dengan 40 jenis rempah pilihan</p>
+          <span class="origin-tag">Padang</span>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="booth-card">
+          <div class="booth-icon">🍗</div>
+          <h5>Ayam Betutu RIAU</h5>
+          <p>Ayam kampung dibalur bumbu base genep dan dipanggang dalam pelepah pisang</p>
+          <span class="origin-tag">Riau</span>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="booth-card">
+          <div class="booth-icon">🍲</div>
+          <h5>Pallu Basa Makassar</h5>
+          <p>Sop berkuah kental dengan isi jeroan sapi dan serundeng kelapa gurih</p>
+          <span class="origin-tag">Makassar</span>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="booth-card">
+          <div class="booth-icon">🍰</div>
+          <h5>Kue Lapis Surabaya</h5>
+          <p>Kue lapis legit premium tiga lapis dengan butter asli berkualitas tinggi</p>
+          <span class="origin-tag">Surabaya</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="jadwal">
+  <div class="container">
+    <span class="soal-label">Soal 2 — Tabel Bootstrap</span>
+    <h2 class="section-title">Jadwal Acara Festival</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>Hari</th>
+            <th>Waktu</th>
+            <th>Acara</th>
+            <th>Deskripsi</th>
+            <th>Panggung</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hari 1 (22 Agt)</td>
+            <td>10.00 – 12.00</td>
+            <td>Cooking Demo</td>
+            <td>Demo memasak rendang bersama Chef Vindex</td>
+            <td>Main Stage</td>
+          </tr>
+          <tr>
+            <td>Hari 1 (22 Agt)</td>
+            <td>14.00 – 16.00</td>
+            <td>Lomba Makan Pedas</td>
+            <td>Kompetisi makan sambal terpedas se-Bandung</td>
+            <td>Arena B</td>
+          </tr>
+          <tr>
+            <td>Hari 2 (23 Agt)</td>
+            <td>09.00 – 11.00</td>
+            <td>Workshop Barista</td>
+            <td>Belajar latte art dari barista nasional</td>
+            <td>Arena B</td>
+          </tr>
+          <tr>
+            <td>Hari 2 (23 Agt)</td>
+            <td>15.00 – 18.00</td>
+            <td>Food Truck Parade</td>
+            <td>Parade 20 food truck terbaik dari Jawa Barat</td>
+            <td>Main Stage</td>
+          </tr>
+          <tr>
+            <td>Hari 3 (24 Agt)</td>
+            <td>10.00 – 13.00</td>
+            <td>Lomba Masak</td>
+            <td>Kompetisi memasak dengan bahan lokal nusantara</td>
+            <td>Main Stage</td>
+          </tr>
+          <tr>
+            <td>Hari 3 (24 Agt)</td>
+            <td>16.00 – 19.00</td>
+            <td>Closing Ceremony</td>
+            <td>Pengumuman pemenang + makan malam bersama</td>
+            <td>Main Stage</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="pesan">
+  <div class="container">
+    <span class="soal-label">Soal 3 — Form Bootstrap</span>
+    <h2 class="section-title">Pesan Tiket</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card card-body shadow-sm">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="nama">Nama Lengkap</label>
+              <input type="text" class="form-control" id="nama" placeholder="Sesuai KTP"/>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="email">Alamat Email</label>
+              <input type="email" class="form-control" id="email" placeholder="email@domain.com"/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="telp">Nomor Telepon</label>
+              <input type="tel" class="form-control" id="telp" placeholder="08xxxxxxxxxx"/>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="tiket">Jenis Tiket</label>
+              <select class="form-control" id="tiket">
+                <option value="">— Pilih Paket Tiket —</option>
+                <option>Harian (Rp 45.000)</option>
+                <option>Festival Pass (Rp 99.000)</option>
+                <option>VIP Pass (Rp 199.000)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="jumlah">Jumlah Tiket</label>
+            <input type="number" class="form-control" id="jumlah" min="1" max="10" value="1"/>
+            <small class="form-text text-muted">Maksimal pembelian 10 tiket per transaksi.</small>
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="syarat"/>
+              <label class="form-check-label" for="syarat">
+                Saya menyetujui syarat dan ketentuan Rasa Nusantara Fest 2025.
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-warning btn-block font-weight-bold">
+            Pesan Tiket Sekarang
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="harga">
+  <div class="container">
+    <span class="soal-label">Soal 4 — Implementasi Wireframe</span>
+    <h2 class="section-title">Harga Tiket Masuk</h2>
+    
+    <div class="row">
+      <div class="col-12 col-md-4 mb-4">
+        <div class="ticket-card text-center d-flex flex-column justify-content-between">
+          <div>
+            <h4 class="font-weight-bold text-muted">HARIAN</h4>
+            <div class="price my-3">Rp 45.000</div>
+            <p class="text-muted small">Per orang</p>
+            <hr>
+            <ul class="text-left">
+              <li>Akses semua booth 1 hari</li>
+              <li>1 kupon minuman</li>
+              <li>Akses panggung umum</li>
+            </ul>
+          </div>
+          <button class="btn btn-outline-dark btn-block mt-4">BELI TIKET</button>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 mb-4">
+        <div class="ticket-card featured text-center d-flex flex-column justify-content-between shadow-sm">
+          <div>
+            <h4 class="font-weight-bold" style="color: hsl(41, 67%, 43%);">FESTIVAL PASS</h4>
+            <div class="price my-3">Rp 99.000</div>
+            <p class="text-muted small">Per orang</p>
+            <hr>
+            <ul class="text-left">
+              <li>Akses penuh 3 hari</li>
+              <li>3 kupon + 1 makanan</li>
+              <li>Priority line booth</li>
+              <li>Goodie bag eksklusif</li>
+            </ul>
+          </div>
+          <button class="btn btn-warning btn-block font-weight-bold mt-4">BELI TIKET</button>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 mb-4">
+        <div class="ticket-card text-center d-flex flex-column justify-content-between">
+          <div>
+            <h4 class="font-weight-bold text-muted">VIP PASS</h4>
+            <div class="price my-3">Rp 199.000</div>
+            <p class="text-muted small">Per orang</p>
+            <hr>
+            <ul class="text-left">
+              <li>Akses penuh + VIP Lounge</li>
+              <li>Unlimited kupon</li>
+              <li>Cooking class eksklusif</li>
+              <li>Meet & greet chef</li>
+              <li>Parkir gratis 3 hari</li>
+            </ul>
+          </div>
+          <button class="btn btn-outline-dark btn-block mt-4">BELI TIKET</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="kontak">
+  <div class="container">
+    <span class="soal-label">Soal 5 — Kreativitas Desain</span>
+    <h2 class="section-title">Hubungi Panitia</h2>
+    
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="bg-white p-4 rounded shadow-sm h-100 border">
+          <h5 class="font-weight-bold mb-4" style="color: #c17f3a;">Informasi Event</h5>
+          
+          <div class="mb-3">
+            <strong class="d-block text-dark">📍 Alamat Lokasi Event:</strong>
+            <span class="text-muted">FCD, Swarna bumi, Tembilahan</span>
+          </div>
+          
+          <div class="mb-3">
+            <strong class="d-block text-dark">📧 Email Panitia:</strong>
+            <span class="text-muted">info@rasanusantarafest.com</span>
+          </div>
+          
+          <div class="mb-3">
+            <strong class="d-block text-dark">📞 Nomor Telepon:</strong>
+            <span class="text-muted">+62 823-6439-8752</span>
+          </div>
+
+          <div class="mb-3">
+            <strong class="d-block text-dark">🌐 Media Sosial:</strong>
+            <span class="badge badge-dark p-2 mr-1">@rasanusantarafest</span>
+            <span class="badge badge-warning p-2 text-dark font-weight-bold">#RasaNantara2025</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <div class="bg-white p-4 rounded shadow-sm h-100 border">
+          <h5 class="font-weight-bold mb-3" style="color: #c17f3a;">Ada Pertanyaan?</h5>
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Nama Anda" required>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Email Anda" required>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" rows="3" placeholder="Tulis pertanyaan Anda di sini..." required></textarea>
+            </div>
+            <button type="button" class="btn btn-dark btn-block">Kirim Pesan</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>RASA NUSANTARA FEST 2025 &copy; Hak Cipta Dilindungi | UTS Web Desain 2 — Paket B</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
