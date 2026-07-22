@@ -1,21 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
+    <!-- Pengaturan karakter dan viewport agar tampilan responsif di HP -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayam Presto by Lesehan Om Jun</title>
+
+    <!-- Import Framework Bootstrap 4 (CSS) untuk tata letak dan komponen UI -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    
+    <!-- Import Font Awesome untuk ikon-ikon di website -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Link ke file stylesheet CSS buatan sendiri -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Navigation Bar (Navbar) utama yang menempel di atas (fixed-top) -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: var(--navy);">
-
-        <a class="navbar-brand font-weight-bold" href="#" data-page="home">
+        <!-- Logo dan Nama Brand di pojok kiri atas navbar -->
+        <a class="navbar-brand font-weight-bold d-flex align-items-center" href="#" data-page="home">
+            <!-- Gambar Logo Perusahaan -->
             <i class="fas fa-drumstick-bite mr-2"></i>
             Ayam Presto by Lesehan Om Jun
         </a>
 
+        <!-- Tombol Hamburger Menu (muncul saat dibuka di HP) -->
         <button class="navbar-toggler"
                 type="button"
                 data-toggle="collapse"
@@ -23,642 +34,483 @@
                 aria-controls="navbarLinks"
                 aria-expanded="false"
                 aria-label="Toggle navigation">
-
             <span class="navbar-toggler-icon"></span>
         </button>
         
+        <!-- Daftar Menu Navigasi (Home, Menu, Tentang, Kontak) -->
         <div class="collapse navbar-collapse" id="navbarLinks">
-
             <ul class="navbar-nav ml-auto">
-
                 <li class="nav-item">
-                    <a class="nav-link nav-link-page active" href="#" data-page="home">
-                        Home
-                    </a>
+                    <a class="nav-link nav-link-page active" href="#" data-page="home">Home</a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link nav-link-page" href="#" data-page="menu">
-                        Menu
-                    </a>
+                    <a class="nav-link nav-link-page" href="#" data-page="menu">Menu</a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link nav-link-page" href="#" data-page="tentang">
-                        Tentang
-                    </a>
+                    <a class="nav-link nav-link-page" href="#" data-page="tentang">Tentang</a>
                 </li>
-
                 <li class="nav-item ml-lg-2">
                     <a class="nav-link nav-link-page btn btn-warning btn-sm text-dark font-weight-bold px-3" href="#" data-page="kontak">
-                        Kontak
-                        <i class="fas fa-phone-alt ml-1"></i>
-
+                        Kontak <i class="fas fa-phone-alt ml-1"></i>
                     </a>
                 </li>
-
             </ul>
-
         </div>
-
     </nav>
 
-    <!-- HOME -->
-<div id="page-home" class="page-view active" style="padding-top:56px;">
+    <!-- ================= HALAMAN HOME ================= -->
+    <div id="page-home" class="page-view active" style="padding-top:56px;">
+        <!-- Banner/Section Hero Utama dengan Gambar Latar -->
+        <section class="hero-section text-white text-center">
+            <div class="container">
+                <!-- Badge Penanda Singkat -->
+                <span class="badge badge-warning text-dark mb-3 px-3 py-2" style="font-size:12px;letter-spacing:.05em;">
+                    Ayam Presto by Lesehan Om Jun
+                </span>
 
-    <section class="hero-section text-white text-center">
+                <!-- Judul Utama Halaman Home -->
+                <h1 class="display-4 font-weight-bold mb-3">
+                    Ayam Presto <br>
+                    Enakk & Yummyy
+                </h1>
 
-        <div class="container">
+                <!-- Deskripsi Singkat -->
+                <p class="lead text-white-50 mb-4">
+                    Kami juga menyajikan makanan yang lain, silakan lihat di menu kami. <br>
+                    Anda kenyang, kami senang :)
+                </p>
 
-            <span class="badge badge-warning text-dark mb-3 px-3 py-2" style="font-size:12px;letter-spacing:.05em;">
-                Ayam Presto by Lesehan Om Jun
-            </span>
+                <!-- Tombol Aksi Cepat (Call to Action) -->
+                <div class="mb-5">
+                    <button class="btn btn-warning text-dark font-weight-bold px-4 mr-2" data-page="menu">
+                        Lihat Menu Kami
+                    </button>
+                    <button class="btn btn-outline-light px-4" data-page="kontak">
+                        Hubungi Kami
+                    </button>
+                </div>
 
-            <h1 class="display-4 font-weight-bold mb-3">
-                Ayam Presto <br>
-                Enakk & Yummyy
-            </h1>
-
-            <p class="lead text-white-50 mb-4">
-                Kami juga menyajikan makanan yang lain, silakan lihat di menu kami. <br>
-                Anda kenyang, kami senang :)
-            </p>
-
-            <div class="mb-5">
-                <button class="btn btn-warning text-dark font-weight-bold px-4 mr-2" data-page="menu">
-                    Lihat Menu Kami
-                </button>
-                <button class="btn btn-outline-light px-4" data-page="kontak">
-                    Hubungi Kami
-                </button>
-            </div>
-
-            <!-- Tambahan Modern: 3 Kotak Data & Mini Sticker -->
-            <div class="row justify-content-center mt-5">
-                <div class="col-md-8">
-                    <div class="home-stats-wrapper">
-                        <div class="row">
-                            <div class="col-4 border-right border-warning-50">
-                                <h3 class="font-weight-bold text-warning mb-0">100%</h3>
-                                <small class="text-white-50">Rempah Asli</small>
-                            </div>
-                            <div class="col-4 border-right border-warning-50">
-                                <h3 class="font-weight-bold text-warning mb-0">Lunak</h3>
-                                <small class="text-white-50">Hingga Ke Tulang</small>
-                            </div>
-                            <div class="col-4">
-                                <h3 class="font-weight-bold text-warning mb-0">Bintang 5</h3>
-                                <small class="text-white-50">Ulasan Rasa</small>
+                <!-- Bagian Statistik Keunggulan Produk -->
+                <div class="row justify-content-center mt-5">
+                    <div class="col-md-8">
+                        <div class="home-stats-wrapper">
+                            <div class="row">
+                                <div class="col-4 border-right border-warning-50">
+                                    <h3 class="font-weight-bold text-warning mb-0">100%</h3>
+                                    <small class="text-white-50">Rempah Asli</small>
+                                </div>
+                                <div class="col-4 border-right border-warning-50">
+                                    <h3 class="font-weight-bold text-warning mb-0">Lunak</h3>
+                                    <small class="text-white-50">Hingga Ke Tulang</small>
+                                </div>
+                                <div class="col-4">
+                                    <h3 class="font-weight-bold text-warning mb-0">Bintang 5</h3>
+                                    <small class="text-white-50">Ulasan Rasa</small>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+    </div>
 
-        </div>
-
-    </section>
-
-</div>
-
-    <!-- MENU -->
+    <!-- ================= HALAMAN MENU ================= -->
     <div id="page-menu" class="page-view" style="padding-top:56px;background:#fcfcfc;">
-
+        <!-- Banner Judul Halaman Menu -->
         <div class="text-white py-4 mb-5" style="background-color:var(--navy);">
-
             <div class="container text-center">
-
-                <span class="badge badge-warning text-dark mb-2">
-                    Menu Andalan
-                </span>
-
-                <h1 class="h3 font-weight-bold mb-1">
-                    Makanan dan Minuman
-                </h1>
-
+                <span class="badge badge-warning text-dark mb-2">Menu Andalan</span>
+                <h1 class="h3 font-weight-bold mb-1">Makanan dan Minuman</h1>
                 <p class="mb-0 text-white-50">
                     Hidangan ayam presto bertekstur lembut dan kaya bumbu <br>dan Minuman segar.
                 </p>
-
             </div>
-
         </div>
 
         <div class="container pb-5">
-
+            <!-- Judul Kategori Makanan -->
             <h2 class="w-100 mb-4 font-weight-bold" style="color: #462c06; padding-left: 15px;">
-            <i class="fas fa-utensils mr-2" style="color: #bd8109;"></i> Menu Makanan
+                <i class="fas fa-utensils mr-2" style="color: #bd8109;"></i> Menu Makanan
             </h2>
 
+            <!-- Grid Kartu Menu Makanan -->
             <div class="row">
-
+                <!-- Kartu Menu 1 -->
                 <div class="col-md-4 col-sm-6 mb-4">
-
                     <div class="card h-100 shadow-sm border-0" style="border-radius:12px;overflow:hidden;">
-
                         <div class="p-3">
-                            <img src="img/latar.webp"
-                                 class="img-fluid w-100"
-                                 style="height:200px;object-fit:cover;border-radius:12px;">
+                            <img src="img/latar.webp" class="img-fluid w-100" style="height:200px;object-fit:cover;border-radius:12px;">
                         </div>
-
                         <div class="card-body d-flex flex-column">
-
-                            <h5 class="font-weight-bold text-danger">
-                                Ayam Presto Goreng
-                            </h5>
-
-                            <p class="text-muted">
-                                (Ayam presto digoreng dan disajikan dengan sambal pedas manis.)
-                            </p>
+                            <h5 class="font-weight-bold text-danger">Ayam Presto Goreng</h5>
+                            <p class="text-muted">(Ayam presto digoreng dan disajikan dengan sambal pedas manis.)</p>
                             <div class="card-footer-custom">
-                            <span class="font-weight-bold">Rp 15.000</span>
-                            <a href="#" class="btn-beli">Beli</a>
+                                <span class="font-weight-bold">Rp 15.000</span>
+                                <a href="#" class="btn-beli">Beli</a>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
+                <!-- Kartu Menu 2 -->
                 <div class="col-md-4 col-sm-6 mb-4">
-
                     <div class="card h-100 shadow-sm border-0" style="border-radius:12px;overflow:hidden;">
-
                         <div class="p-3">
-                            <img src="img/bakar.jpeg"
-                                 class="img-fluid w-100"
-                                 style="height:200px;object-fit:cover;border-radius:12px;">
+                            <img src="img/bakar.jpeg" class="img-fluid w-100" style="height:200px;object-fit:cover;border-radius:12px;">
                         </div>
-
                         <div class="card-body d-flex flex-column">
-
-                            <h5 class="font-weight-bold text-danger">
-                                Ayam Presto Bakar
-                            </h5>
-
-                            <p class="text-muted">
-                                (Ayam presto dibakar dan disajikan dengan sambal pedas manis juga lalapannya.)
-                            </p>
+                            <h5 class="font-weight-bold text-danger">Ayam Presto Bakar</h5>
+                            <p class="text-muted">(Ayam presto dibakar dan disajikan dengan sambal pedas manis juga lalapannya.)</p>
                             <div class="card-footer-custom">
-                            <span class="font-weight-bold">Rp 15.000</span>
-                            <a href="#" class="btn-beli">Beli</a>
+                                <span class="font-weight-bold">Rp 15.000</span>
+                                <a href="#" class="btn-beli">Beli</a>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
+                <!-- Kartu Menu 3 -->
                 <div class="col-md-4 col-sm-6 mb-4">
-
                     <div class="card h-100 shadow-sm border-0" style="border-radius:12px;overflow:hidden;">
-
                         <div class="p-3">
-                            <img src="img/latar.webp"
-                                 class="img-fluid w-100"
-                                 style="height:200px;object-fit:cover;border-radius:12px;">
+                            <img src="img/latar.webp" class="img-fluid w-100" style="height:200px;object-fit:cover;border-radius:12px;">
                         </div>
-
                         <div class="card-body d-flex flex-column">
-
-                            <h5 class="font-weight-bold text-danger">
-                                Ayam Presto Goreng Jumbo
-                            </h5>
-
-                            <p class="text-muted">
-                                (Ukuran Ayam prestonya lebih besar digoreng dan disajikan dengan sambal pedas manis.)
-                            </p>
+                            <h5 class="font-weight-bold text-danger">Ayam Presto Goreng Jumbo</h5>
+                            <p class="text-muted">(Ukuran Ayam prestonya lebih besar digoreng dan disajikan dengan sambal pedas manis.)</p>
                             <div class="card-footer-custom">
-                            <span class="font-weight-bold">Rp 18.000</span>
-                            <a href="#" class="btn-beli">Beli</a>
+                                <span class="font-weight-bold">Rp 18.000</span>
+                                <a href="#" class="btn-beli">Beli</a>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
-
+                <!-- Kartu Menu 4 -->
                 <div class="col-md-4 col-sm-6 mb-4">
-
                     <div class="card h-100 shadow-sm border-0" style="border-radius:12px;overflow:hidden;">
-
                         <div class="p-3">
-                            <img src="img/bakar.jpeg"
-                                 class="img-fluid w-100"
-                                 style="height:200px;object-fit:cover;border-radius:12px;">
+                            <img src="img/bakar.jpeg" class="img-fluid w-100" style="height:200px;object-fit:cover;border-radius:12px;">
                         </div>
-
                         <div class="card-body d-flex flex-column">
-
-                            <h5 class="font-weight-bold text-danger">
-                                Ayam Presto Bakar Jumbo
-                            </h5>
-
-                            <p class="text-muted">
-                                (Ukuran Ayam presto lebih besar dibakar dan disajikan dengan sambal pedas manis.)
-                            </p>
+                            <h5 class="font-weight-bold text-danger">Ayam Presto Bakar Jumbo</h5>
+                            <p class="text-muted">(Ukuran Ayam presto lebih besar dibakar dan disajikan dengan sambal pedas manis.)</p>
                             <div class="card-footer-custom">
-                            <span class="font-weight-bold">Rp 18.000</span>
-                            <a href="#" class="btn-beli">Beli</a>
+                                <span class="font-weight-bold">Rp 18.000</span>
+                                <a href="#" class="btn-beli">Beli</a>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
+                <!-- Kartu Menu 5 -->
                 <div class="col-md-4 col-sm-6 mb-4">
-
                     <div class="card h-100 shadow-sm border-0" style="border-radius:12px;overflow:hidden;">
-
                         <div class="p-3">
-                            <img src="img/lele.jpeg"
-                                 class="img-fluid w-100"
-                                 style="height:200px;object-fit:cover;border-radius:12px;">
+                            <img src="img/lele.jpeg" class="img-fluid w-100" style="height:200px;object-fit:cover;border-radius:12px;">
                         </div>
-
                         <div class="card-body d-flex flex-column">
-
-                            <h5 class="font-weight-bold text-danger">
-                                Pecel Lele
-                            </h5>
-
-                            <p class="text-muted">
-                                (ikan lele yang di bumbui dan digoreng, disajikan dengan sambal Terasi pedas manis dan lalapan.)
-                            </p>
+                            <h5 class="font-weight-bold text-danger">Pecel Lele</h5>
+                            <p class="text-muted">(ikan lele yang di bumbui dan digoreng, disajikan dengan sambal Terasi pedas manis dan lalapan.)</p>
                             <div class="card-footer-custom">
-                            <span class="font-weight-bold">Rp 15.000</span>
-                            <a href="#" class="btn-beli">Beli</a>
+                                <span class="font-weight-bold">Rp 15.000</span>
+                                <a href="#" class="btn-beli">Beli</a>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
-
+                <!-- Kartu Menu 6 -->
                 <div class="col-md-4 col-sm-6 mb-4">
-
                     <div class="card h-100 shadow-sm border-0" style="border-radius:12px;overflow:hidden;">
-
                         <div class="p-3">
-                            <img src="img/geprek.jpg"
-                                 class="img-fluid w-100"
-                                 style="height:200px;object-fit:cover;border-radius:12px;">
+                            <img src="img/geprek.jpg" class="img-fluid w-100" style="height:200px;object-fit:cover;border-radius:12px;">
                         </div>
-
                         <div class="card-body d-flex flex-column">
-
-                            <h5 class="font-weight-bold text-danger">
-                                Ayam Geprek
-                            </h5>
-
-                            <p class="text-muted">
-                                (Ayam geprek yang disajikan dengan sambal pedasnya dan juga lalapan.)
-                            </p>
+                            <h5 class="font-weight-bold text-danger">Ayam Geprek</h5>
+                            <p class="text-muted">(Ayam geprek yang disajikan dengan sambal pedasnya dan juga lalapan.)</p>
                             <div class="card-footer-custom">
-                            <span class="font-weight-bold">Rp 12.000</span>
-                            <a href="#" class="btn-beli">Beli</a>
+                                <span class="font-weight-bold">Rp 12.000</span>
+                                <a href="#" class="btn-beli">Beli</a>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
 
+            <!-- Judul Kategori Minuman -->
             <h2 class="w-100 mb-4 font-weight-bold" style="color: #462c06; padding-left: 15px;">
-            <i class="fas fa-cocktail mr-2" style="color: #bd8109;"></i> Menu Minuman
+                <i class="fas fa-cocktail mr-2" style="color: #bd8109;"></i> Menu Minuman
             </h2>
             
+            <!-- Grid Kartu Menu Minuman -->
             <div class="row">
+                <!-- Kartu Minuman 1 -->
                 <div class="col-md-4 col-sm-6 mb-4">
-
                     <div class="card h-100 shadow-sm border-0" style="border-radius:12px;overflow:hidden;">
-
                         <div class="p-3">
-                            <img src="img/es.jpeg"
-                                 class="img-fluid w-100"
-                                 style="height:200px;object-fit:cover;border-radius:12px;">
+                            <img src="img/es.jpeg" class="img-fluid w-100" style="height:200px;object-fit:cover;border-radius:12px;">
                         </div>
-
                         <div class="card-body d-flex flex-column">
-
-                            <h5 class="font-weight-bold text-danger">
-                                Es Kosong
-                            </h5>
-
-                            <p class="text-muted">
-                                (Air putih dan es kristal.)
-                            </p>
+                            <h5 class="font-weight-bold text-danger">Es Kosong</h5>
+                            <p class="text-muted">(Air putih dan es kristal.)</p>
                             <div class="card-footer-custom">
-                            <span class="font-weight-bold">Rp 1.000</span>
-                            <a href="#" class="btn-beli">Beli</a>
+                                <span class="font-weight-bold">Rp 1.000</span>
+                                <a href="#" class="btn-beli">Beli</a>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
+                <!-- Kartu Minuman 2 -->
                 <div class="col-md-4 col-sm-6 mb-4">
-
                     <div class="card h-100 shadow-sm border-0" style="border-radius:12px;overflow:hidden;">
-
                         <div class="p-3">
-                            <img src="img/teh.jpg"
-                                 class="img-fluid w-100"
-                                 style="height:200px;object-fit:cover;border-radius:12px;">
+                            <img src="img/teh.jpg" class="img-fluid w-100" style="height:200px;object-fit:cover;border-radius:12px;">
                         </div>
-
                         <div class="card-body d-flex flex-column">
-
-                            <h5 class="font-weight-bold text-danger">
-                                Es Teh
-                            </h5>
-
-                            <p class="text-muted">
-                                (Teh dan es kristal.)
-                            </p>
+                            <h5 class="font-weight-bold text-danger">Es Teh</h5>
+                            <p class="text-muted">(Teh dan es kristal.)</p>
                             <div class="card-footer-custom">
-                            <span class="font-weight-bold">Rp 2.000</span>
-                            <a href="#" class="btn-beli">Beli</a>
+                                <span class="font-weight-bold">Rp 2.000</span>
+                                <a href="#" class="btn-beli">Beli</a>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
+                <!-- Kartu Minuman 3 -->
                 <div class="col-md-4 col-sm-6 mb-4">
-
                     <div class="card h-100 shadow-sm border-0" style="border-radius:12px;overflow:hidden;">
-
                         <div class="p-3">
-                            <img src="img/jeruk.jpeg"
-                                 class="img-fluid w-100"
-                                 style="height:200px;object-fit:cover;border-radius:12px;">
+                            <img src="img/jeruk.jpeg" class="img-fluid w-100" style="height:200px;object-fit:cover;border-radius:12px;">
                         </div>
-
                         <div class="card-body d-flex flex-column">
-
-                            <h5 class="font-weight-bold text-danger">
-                                Jeruk Peras
-                            </h5>
-
-                            <p class="text-muted">
-                                (Jeruk peras dan es kristal.)
-                            </p>
+                            <h5 class="font-weight-bold text-danger">Jeruk Peras</h5>
+                            <p class="text-muted">(Jeruk peras dan es kristal.)</p>
                             <div class="card-footer-custom">
-                            <span class="font-weight-bold">Rp 5.000</span>
-                            <a href="#" class="btn-beli">Beli</a>
+                                <span class="font-weight-bold">Rp 5.000</span>
+                                <a href="#" class="btn-beli">Beli</a>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
             
+            <!-- Bagian Tabel Pesanan (Keranjang) -->
             <div class="row mt-5" id="section-keranjang">
                 <div class="col-md-12">
                     <h4 class="mb-3">Pesanan Anda</h4>
                     <div class="table-responsive">
                         <table class="table table-bordered bg-white align-middle">
                             <thead class="table-dark">
-                            <tr>
-                                <th>Nama Menu</th>
-                                <th>Harga</th>
-                                <th class="text-center" style="width: 200px;">Aksi</th>
-                            </tr>
+                                <tr>
+                                    <th>Nama Menu</th>
+                                    <th>Harga</th>
+                                    <th class="text-center" style="width: 200px;">Aksi</th>
+                                </tr>
                             </thead>
+                            <!-- Baris item pesanan akan ditambahkan via JavaScript ke tbody ini -->
                             <tbody id="tabel-keranjang"></tbody>
                         </table>
-                        <!-- STIKER JAMINAN KUALITAS MODERN -->
-<div class="row mt-5 pt-4 justify-content-center border-top border-warning-25">
-    <div class="col-md-10 text-center mb-4">
-        <span class="badge-stiker-title">Lesehan Om Jun Quality Assurance</span>
-    </div>
-    
-    <div class="col-lg-3 col-sm-6 mb-4">
-        <div class="stiker-modern-card">
-            <div class="stiker-icon-circle">
-                <i class="fas fa-fire-alt"></i>
-            </div>
-            <h5 class="stiker-title">Freshly Cooked</h5>
-            <p class="stiker-text">Dimasak langsung setiap hari dari dapur higienis kami untuk menjaga kesegaran rasa.</p>
-            <div class="stiker-glow-line"></div>
-        </div>
-    </div>
 
-    <div class="col-lg-3 col-sm-6 mb-4">
-        <div class="stiker-modern-card">
-            <div class="stiker-icon-circle">
-                <i class="fas fa-leaf"></i>
-            </div>
-            <h5 class="stiker-title">100% Halal Alami</h5>
-            <p class="stiker-text">Menggunakan bahan baku segar pilihan dan rempah nusantara murni tanpa pengawet.</p>
-            <div class="stiker-glow-line"></div>
-        </div>
-    </div>
+                        <!-- Bagian Stiker Informasi Jaminan Kualitas -->
+                        <div class="row mt-5 pt-4 justify-content-center border-top border-warning-25">
+                            <div class="col-md-10 text-center mb-4">
+                                <span class="badge-stiker-title">Lesehan Om Jun Quality Assurance</span>
+                            </div>
+                            
+                            <div class="col-lg-3 col-sm-6 mb-4">
+                                <div class="stiker-modern-card">
+                                    <div class="stiker-icon-circle"><i class="fas fa-fire-alt"></i></div>
+                                    <h5 class="stiker-title">Freshly Cooked</h5>
+                                    <p class="stiker-text">Dimasak langsung setiap hari dari dapur higienis kami untuk menjaga kesegaran rasa.</p>
+                                    <div class="stiker-glow-line"></div>
+                                </div>
+                            </div>
 
-    <div class="col-lg-3 col-sm-6 mb-4">
-        <div class="stiker-modern-card">
-            <div class="stiker-icon-circle">
-                <i class="fas fa-shipping-fast"></i>
-            </div>
-            <h5 class="stiker-title">Express Delivery</h5>
-            <p class="stiker-text">Pesanan siap dibungkus dengan cepat dan dikirim dalam kondisi hangat ke tempat Anda.</p>
-            <div class="stiker-glow-line"></div>
-        </div>
-    </div>
-</div>
+                            <div class="col-lg-3 col-sm-6 mb-4">
+                                <div class="stiker-modern-card">
+                                    <div class="stiker-icon-circle"><i class="fas fa-leaf"></i></div>
+                                    <h5 class="stiker-title">100% Halal Alami</h5>
+                                    <p class="stiker-text">Menggunakan bahan baku segar pilihan dan rempah nusantara murni tanpa pengawet.</p>
+                                    <div class="stiker-glow-line"></div>
+                                </div>
+                            </div>
 
+                            <div class="col-lg-3 col-sm-6 mb-4">
+                                <div class="stiker-modern-card">
+                                    <div class="stiker-icon-circle"><i class="fas fa-shipping-fast"></i></div>
+                                    <h5 class="stiker-title">Express Delivery</h5>
+                                    <p class="stiker-text">Pesanan siap dibungkus dengan cepat dan dikirim dalam kondisi hangat ke tempat Anda.</p>
+                                    <div class="stiker-glow-line"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>    
         </div>
-
     </div>
 
-   <!-- TENTANG -->
+    <!-- ================= HALAMAN TENTANG ================= -->
     <div id="page-tentang" class="page-view" style="padding-top:80px; background:#120c02; min-height: 100vh;">
-    
-    <div class="text-white py-4 mb-5" style="background: rgba(56, 38, 2, 0.5); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(241, 196, 15, 0.3);">
-        <div class="container text-center">
-            <span class="badge badge-warning text-dark mb-2 font-weight-bold px-3 py-1" style="border-radius: 20px;">OUR STORY</span>
-            <h1 class="h3 font-weight-bold mb-1 text-white">Cita Rasa Lesehan Om Jun</h1>
-        </div>
-    </div>
-
-    <div class="container pb-5 mt-5">
-        <div class="row align-items-center">
-            
-            <!-- BLOK KIRI: NARASI & POIN UNGGULAN -->
-            <div class="col-lg-6 mb-5 pr-lg-5">
-                <span class="text-warning font-weight-bold text-uppercase tracking-wider d-block mb-2" style="font-size: 14px; letter-spacing: 2px;">
-                    Authentic Recipe
-                </span>
-                <h2 class="font-weight-bold mb-4 text-white display-5" style="line-height: 1.3;">
-                    Rahasia Kelezatan <br>
-                    <span class="text-gradient-emas">Rempah Nusantara</span>
-                </h2>
-                <p class="text-white-50 mb-4" style="line-height: 1.9; font-size: 15px;">
-                    Berawal dari kecintaan keluarga terhadap kuliner tradisional, <strong>Ayam Presto by Lesehan Om Jun</strong> hadir menyajikan hidangan istimewa yang kaya bumbu. Kami memadukan resep turun-temurun dengan teknik pengolahan modern.
-                </p>
-                <p class="text-white-50 mb-5" style="line-height: 1.9; font-size: 15px;">
-                    Ayam dikukus menggunakan teknik presto khusus selama berjam-jam. Hasilnya? Daging yang super empuk dan bumbu meresap sempurna hingga ke tulang terdalam, membuat tulangnya lunak dan aman dikonsumsi!
-                </p>
-                
-                <!-- 3 Kotak Fitur Minimalis -->
-                <div class="row">
-                    <div class="col-md-4 col-6 mb-3">
-                        <div class="feature-box-modern">
-                            <i class="fas fa-check-circle text-warning fa-lg mb-2"></i>
-                            <span class="d-block text-white font-weight-bold small">100% Halal</span>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-6 mb-3">
-                        <div class="feature-box-modern">
-                            <i class="fas fa-utensils text-warning fa-lg mb-2"></i>
-                            <span class="d-block text-white font-weight-bold small">Tulang Lunak</span>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-6 mb-3">
-                        <div class="feature-box-modern">
-                            <i class="fas fa-drumstick-bite text-warning fa-lg mb-2"></i>
-                            <span class="d-block text-white font-weight-bold small">Bumbu Meresap</span>
-                        </div>
-                    </div>
-                </div>
+        <!-- Banner Judul Halaman Tentang -->
+        <div class="text-white py-4 mb-5" style="background: rgba(56, 38, 2, 0.5); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(241, 196, 15, 0.3);">
+            <div class="container text-center">
+                <span class="badge badge-warning text-dark mb-2 font-weight-bold px-3 py-1" style="border-radius: 20px;">OUR STORY</span>
+                <h1 class="h3 font-weight-bold mb-1 text-white">Cita Rasa Lesehan Om Jun</h1>
             </div>
-
-            <!-- BLOK KANAN: OVERLAPPING GEOMETRIC GRID (BINGKAI KACA & FOTO) -->
-            <div class="col-lg-6 mb-5 mt-4 mt-lg-0">
-                <div class="modern-grid-wrapper">
-                    <!-- Foto Utama (Besar di Belakang) -->
-                    <div class="photo-card main-photo shadow-lg">
-                        <img src="img/lokasi.jpeg" alt="Foto Lesehan Utama">
-                    </div>
-                    <!-- Foto Pendukung (Kecil Menumpuk di Depan) -->
-                    <div class="photo-card sub-photo shadow-lg">
-                        <img src="img/bakar.jpeg" alt="Detail Hidangan">
-                    </div>
-                    <!-- Tag Melayang Kaca Emas -->
-                    <div class="floating-glass-tag">
-                        <span class="d-block h3 mb-0 text-warning">⭐️</span>
-                        <span class="text-white small font-weight-bold">Rasa Dijamin enak</span>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
-</div>
 
-<!-- KONTAK -->
-<div id="page-kontak" class="page-view" style="padding-top:56px; min-height: 100vh; background:#120c02;">
-
-    <div class="text-white py-4 mb-5" style="background: rgba(56, 38, 2, 0.5); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(241, 196, 15, 0.3);">
-        <div class="container text-center">
-            <span class="badge badge-warning text-dark mb-2 font-weight-bold px-3 py-1" style="border-radius: 20px;">CONTACT US</span>
-            <h1 class="h3 font-weight-bold mb-1 text-white">Hubungi Lesehan Om Jun</h1>
-            <p class="text-white-50 mb-0 small">Kami siap melayani pesanan dan pertanyaan Anda dengan cepat.</p>
-        </div>
-    </div>
-
-    <div class="container pb-5">
-        <div class="row justify-content-center mb-4">
-            
-            <!-- BLOK KIRI: AKSES PINTAS CEPAT -->
-            <div class="col-lg-5 mb-4">
-                <div class="kontak-info-card">
-                    <h5 class="font-weight-bold text-white mb-4"><i class="fas fa-headset text-warning mr-2"></i> Akses Cepat</h5>
+        <div class="container pb-5 mt-5">
+            <div class="row align-items-center">
+                <!-- Kolom Penjelasan Cerita/Profil Usaha -->
+                <div class="col-lg-6 mb-5 pr-lg-5">
+                    <span class="text-warning font-weight-bold text-uppercase tracking-wider d-block mb-2" style="font-size: 14px; letter-spacing: 2px;">
+                        Authentic Recipe
+                    </span>
+                    <h2 class="font-weight-bold mb-4 text-white display-5" style="line-height: 1.3;">
+                        Rahasia Kelezatan <br>
+                        <span class="text-gradient-emas">Rempah Nusantara</span>
+                    </h2>
+                    <p class="text-white-50 mb-4" style="line-height: 1.9; font-size: 15px;">
+                        Berawal dari kecintaan keluarga terhadap kuliner tradisional, <strong>Ayam Presto by Lesehan Om Jun</strong> hadir menyajikan hidangan istimewa yang kaya bumbu. Kami memadukan resep turun-temurun dengan teknik pengolahan modern.
+                    </p>
+                    <p class="text-white-50 mb-5" style="line-height: 1.9; font-size: 15px;">
+                        Ayam dikukus menggunakan teknik presto khusus selama berjam-jam. Hasilnya? Daging yang super empuk dan bumbu meresap sempurna hingga ke tulang terdalam, membuat tulangnya lunak dan aman dikonsumsi!
+                    </p>
                     
-                    <a href="https://wa.me/628123456789?text=Halo%20Om%20Jun,%20saya%20mau%20tanya%20tentang%20menu%20ayam%20presto" target="_blank" class="btn-kontak-aksi wa-color">
-                        <i class="fab fa-whatsapp"></i>
-                        <div>
-                            <span class="d-block font-weight-bold">Chat WhatsApp</span>
-                            <small>Respon cepat via pesan teks</small>
+                    <!-- Kotak Fitur Keunggulan Singkat -->
+                    <div class="row">
+                        <div class="col-md-4 col-6 mb-3">
+                            <div class="feature-box-modern">
+                                <i class="fas fa-check-circle text-warning fa-lg mb-2"></i>
+                                <span class="d-block text-white font-weight-bold small">100% Halal</span>
+                            </div>
                         </div>
-                    </a>
-
-                    <a href="tel:+628123456789" class="btn-kontak-aksi tel-color">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <span class="d-block font-weight-bold">Telepon Langsung</span>
-                            <small>Hubungi langsung via seluler</small>
+                        <div class="col-md-4 col-6 mb-3">
+                            <div class="feature-box-modern">
+                                <i class="fas fa-utensils text-warning fa-lg mb-2"></i>
+                                <span class="d-block text-white font-weight-bold small">Tulang Lunak</span>
+                            </div>
                         </div>
-                    </a>
-
-                    <a href="#area-peta" class="btn-kontak-aksi maps-color">
-                        <i class="fas fa-map-marked-alt"></i>
-                        <div>
-                            <span class="d-block font-weight-bold">Petunjuk Lokasi</span>
-                            <small>Lihat peta di bawah ini</small>
+                        <div class="col-md-4 col-6 mb-3">
+                            <div class="feature-box-modern">
+                                <i class="fas fa-drumstick-bite text-warning fa-lg mb-2"></i>
+                                <span class="d-block text-white font-weight-bold small">Bumbu Meresap</span>
+                            </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- BLOK KANAN: FORM KIRIM PESAN -->
-            <div class="col-lg-6 mb-4">
-                <div class="kontak-form-card">
-                    <h5 class="font-weight-bold text-white mb-4"><i class="fas fa-paper-plane text-warning mr-2"></i> Kirim Pesan Instan</h5>
-                    <form id="formWhatsApp">
-                        <div class="form-group">
-                            <label class="text-white-50 small font-weight-bold">Nama Lengkap</label>
-                            <input type="text" id="inputNama" class="form-control-custom" placeholder="Masukkan nama Anda" required>
+                <!-- Kolom Galeri Foto Tumpuk (Modern Grid) -->
+                <div class="col-lg-6 mb-5 mt-4 mt-lg-0">
+                    <div class="modern-grid-wrapper">
+                        <div class="photo-card main-photo shadow-lg">
+                            <img src="img/lokasi.jpeg" alt="Foto Lesehan Utama">
                         </div>
-                        <div class="form-group">
-                            <label class="text-white-50 small font-weight-bold">Isi Pesan / Detail Pesanan</label>
-                            <textarea id="inputPesan" rows="4" class="form-control-custom" placeholder="Contoh: Saya mau pesan Ayam Presto Bakar Jumbo 2 porsi..." required></textarea>
+                        <div class="photo-card sub-photo shadow-lg">
+                            <img src="img/bakar.jpeg" alt="Detail Hidangan">
                         </div>
-                        <button type="submit" class="btn-kirim-form">
-                            Kirim ke WhatsApp <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- AREA PETA GOOGLE MAPS INTERAKTIF -->
-        <div class="row justify-content-center mt-2" id="area-peta">
-            <div class="col-lg-11">
-                <div class="peta-wrapper-card">
-                    <h5 class="font-weight-bold text-white mb-3 text-center">
-                        <i class="fas fa-map-pin text-warning mr-2"></i> Lokasi Lesehan Om Jun
-                    </h5>
-                    <div class="responsive-map-container">
-                        <!-- Tempelkan kode <iframe> dari Google Maps kamu di bawah ini -->
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6900040947735!2d101.3782553739836!3d0.4595185637926664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5a988d9d775b3%3A0x4c00dba0c0db1ba3!2sAyam%20presto%20by%20lesehan%20om%20jun!5e0!3m2!1sid!2sid!4v1784651507510!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
-                            </iframe>
+                        <div class="floating-glass-tag">
+                            <span class="d-block h3 mb-0 text-warning">⭐️</span>
+                            <span class="text-white small font-weight-bold">Rasa Dijamin enak</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
-</div>
+    <!-- ================= HALAMAN KONTAK ================= -->
+    <div id="page-kontak" class="page-view" style="padding-top:56px; min-height: 100vh; background:#120c02;">
+        <!-- Banner Judul Halaman Kontak -->
+        <div class="text-white py-4 mb-5" style="background: rgba(56, 38, 2, 0.5); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(241, 196, 15, 0.3);">
+            <div class="container text-center">
+                <span class="badge badge-warning text-dark mb-2 font-weight-bold px-3 py-1" style="border-radius: 20px;">CONTACT US</span>
+                <h1 class="h3 font-weight-bold mb-1 text-white">Hubungi Lesehan Om Jun</h1>
+                <p class="text-white-50 mb-0 small">Kami siap melayani pesanan dan pertanyaan Anda dengan cepat.</p>
+            </div>
+        </div>
 
+        <div class="container pb-5">
+            <div class="row justify-content-center mb-4">
+                <!-- Kartu Kontak Langsung (WA, Telepon, Map) -->
+                <div class="col-lg-5 mb-4">
+                    <div class="kontak-info-card">
+                        <h5 class="font-weight-bold text-white mb-4"><i class="fas fa-headset text-warning mr-2"></i> Akses Cepat</h5>
+                        
+                        <a href="https://wa.me/628123456789?text=Halo%20Om%20Jun,%20saya%20mau%20tanya%20tentang%20menu%20ayam%20presto" target="_blank" class="btn-kontak-aksi wa-color">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <span class="d-block font-weight-bold">Chat WhatsApp</span>
+                                <small>Respon cepat via pesan teks</small>
+                            </div>
+                        </a>
+
+                        <a href="tel:+628123456789" class="btn-kontak-aksi tel-color">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <span class="d-block font-weight-bold">Telepon Langsung</span>
+                                <small>Hubungi langsung via seluler</small>
+                            </div>
+                        </a>
+
+                        <a href="#area-peta" class="btn-kontak-aksi maps-color">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <div>
+                                <span class="d-block font-weight-bold">Petunjuk Lokasi</span>
+                                <small>Lihat peta di bawah ini</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kartu Formulir Pesan Instan ke WA -->
+                <div class="col-lg-6 mb-4">
+                    <div class="kontak-form-card">
+                        <h5 class="font-weight-bold text-white mb-4"><i class="fas fa-paper-plane text-warning mr-2"></i> Kirim Pesan Instan</h5>
+                        <form id="formWhatsApp">
+                            <div class="form-group">
+                                <label class="text-white-50 small font-weight-bold">Nama Lengkap</label>
+                                <input type="text" id="inputNama" class="form-control-custom" placeholder="Masukkan nama Anda" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="text-white-50 small font-weight-bold">Isi Pesan / Detail Pesanan</label>
+                                <textarea id="inputPesan" rows="4" class="form-control-custom" placeholder="Contoh: Saya mau pesan Ayam Presto Bakar Jumbo 2 porsi..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn-kirim-form">
+                                Kirim ke WhatsApp <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Embed Google Maps Lokasi Tempat -->
+            <div class="row justify-content-center mt-2" id="area-peta">
+                <div class="col-lg-11">
+                    <div class="peta-wrapper-card">
+                        <h5 class="font-weight-bold text-white mb-3 text-center">
+                            <i class="fas fa-map-pin text-warning mr-2"></i> Lokasi Lesehan Om Jun
+                        </h5>
+                        <div class="responsive-map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6900040947735!2d101.3782553739836!3d0.4595185637926664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5a988d9d775b3%3A0x4c00dba0c0db1ba3!2sAyam%20presto%20by%20lesehan%20om%20jun!5e0!3m2!1sid!2sid!4v1784651507510!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Import JavaScript Library (jQuery, Popper.js, Bootstrap JS) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Link ke file JavaScript kustom -->
     <script src="script.js"></script>
-
 </body>
 </html>
