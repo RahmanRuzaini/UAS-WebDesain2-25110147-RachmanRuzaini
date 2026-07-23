@@ -1,223 +1,377 @@
+/* =========================================================
+   1. GLOBAL VARIABLES & STYLES (DASAR)
+   ========================================================= */
 :root {
-    --navy : #382602;
-    --gold : #291802;
+    --navy: #7e5605;
+    --gold: #905407;
+    --glow-color: rgba(255, 193, 7, 0.801);
 }
 
-.nav-link-page { 
-    position: relative;
+body {
+    background-color: #120c02;
+    overflow-x: hidden;
 }
 
-.nav-link-page::after{
-    content: '';
-    position: absolute;
-    left: 8px;
-    right: 8px;
-    bottom: 0;
-    height: 2px;
-    background: var(--gold);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .25s ease;
-}
-
-.navbar {
-    background: rgba(95, 64, 2, 0.7) !important;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-bottom: 2px solid #593103 !important;
-    box-shadow: 0 4px 25px rgba(232, 117, 1, 0.5), 
-                0 0 15px rgba(173, 125, 2, 0.2);
-}
-
-.navbar-brand, 
-.navbar-dark .navbar-nav .nav-link-page {
-    color: #ffffff !important;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-.navbar-dark .navbar-nav .nav-link-page:hover {
-    color: #ffffff !important; 
-
-    opacity: 1; 
-    text-shadow: 
-        0 0 4px #ffc107,    
-        0 0 10px #ffc107,   
-        0 0 20px #ffc107,   
-        0 0 40px #ff1493;   
-    
-    transform: translateY(-1px); 
-}
-.hero-section{
-    background: url("img/latar.webp") center center/cover no-repeat;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.hero-section::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,.45);
-}
-
-.hero-section .container{
-    position:relative;
-    z-index:1;
-}
-
-.hero-section h1 {
-    font-size: 3.5rem;
-    font-weight: 800 !important;
-    letter-spacing: 1px;
-    background: linear-gradient(135deg, #ffffff 0%, #ffeaa7 50%, #f1c40f 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 10px rgba(241, 196, 15, 0.6)) drop-shadow(0 0 30px rgba(241, 196, 15, 0.3));
-    animation: kilauEmas 3s ease-in-out infinite alternate;
-}
-
-@keyframes kilauEmas {
-    from {
-        filter: drop-shadow(0 0 8px rgba(241, 196, 15, 0.5)) drop-shadow(0 0 25px rgba(241, 196, 15, 0.2));
-    }
-    to {
-        filter: drop-shadow(0 0 15px rgba(241, 196, 15, 0.8)) drop-shadow(0 0 40px rgba(241, 196, 15, 0.5));
-    }
-}
-
+/* Single Page View Navigation Toggle */
 .page-view {
     display: none;
 }
 
 .page-view.active {
     display: block;
-    animation: fadeup .3s ease;
+    animation: fadeUp 0.5s ease forwards;
 }
 
-@keyframes fadeup {
+@keyframes fadeUp {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+/* =========================================================
+   2. NAVBAR STYLING
+   ========================================================= */
+.navbar {
+    background: rgba(56, 38, 2, 0.85) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 2px solid rgba(255, 193, 7, 0.4) !important;
+    box-shadow: 0 4px 25px rgba(232, 117, 1, 0.4), 
+                0 0 15px rgba(241, 196, 15, 0.3);
+    transition: all 0.3s ease;
+}
 
+.brand-logo {
+    height: 35px;
+    width: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #ffc107;
+}
+
+.navbar-brand, 
+.navbar-dark .navbar-nav .nav-link-page {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link-page:hover {
+    color: #ffc107 !important; 
+    text-shadow: 0 0 8px rgba(255, 193, 7, 0.8),
+                 0 0 18px rgba(255, 193, 7, 0.6);
+    transform: translateY(-2px); 
+}
+
+/* =========================================================
+   3. SECTION 1: HOME STYLING
+   ========================================================= */
+/* Hero Slide Carousel */
+.hero-slide {
+    height: calc(100vh - 56px);
+    min-height: 500px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: transform 6s ease;
+}
+
+.slide-1 { background-image: url("img/l.png"); }
+.slide-2 { background-image: url("img/bakar.jpeg"); }
+.slide-3 { background-image: url("img/kar.jpeg"); }
+
+.hero-overlay {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: linear-gradient(180deg, rgba(18, 12, 2, 0.5) 0%, rgba(18, 12, 2, 0.85) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: 3.2rem;
+    font-weight: 800 !important;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #ffffff 0%, #ffeaa7 50%, #f1c40f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(241, 196, 15, 0.5);
+    animation: pulseGlow 3s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    0% { filter: drop-shadow(0 0 5px rgba(241, 196, 15, 0.4)); }
+    100% { filter: drop-shadow(0 0 20px rgba(241, 196, 15, 0.9)); }
+}
+
+/* Kontrol Carousel & Indikator */
+#homeCarousel .carousel-indicators li {
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 4px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+#homeCarousel .carousel-indicators .active {
+    background-color: #ffc107;
+    width: 30px;
+}
+
+#homeCarousel .carousel-control-prev,
+#homeCarousel .carousel-control-next {
+    width: 5%;
+    z-index: 10;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+#homeCarousel .carousel-control-prev:hover,
+#homeCarousel .carousel-control-next:hover {
+    opacity: 1;
+}
+
+#homeCarousel .carousel-control-prev-icon,
+#homeCarousel .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #ffc107;
+    border-radius: 50%;
+    padding: 20px;
+    background-size: 50% 50%;
+}
+
+/* Home Stats / Keunggulan */
+.home-stats-wrapper {
+    background: rgba(56, 38, 2, 0.6) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(241, 196, 15, 0.2);
+}
+
+.border-warning-50 {
+    border-color: rgba(241, 196, 15, 0.3) !important;
+}
+
+.stiker-icon-circle {
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(135deg, #ffd700, #f1c40f);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: #382602;
+    font-size: 26px;
+    transition: transform 0.4s ease;
+}
+
+.animated-glow {
+    animation: moveAndGlow 2.5s infinite ease-in-out;
+}
+
+.home-stats-wrapper .col-md-4:nth-child(1) .stiker-icon-circle { animation-delay: 0s; }
+.home-stats-wrapper .col-md-4:nth-child(2) .stiker-icon-circle { animation-delay: 0.5s; }
+.home-stats-wrapper .col-md-4:nth-child(3) .stiker-icon-circle { animation-delay: 1s; }
+
+@keyframes moveAndGlow {
+    0% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.2);
+    }
+    50% {
+        transform: translateY(-8px) scale(1.1);
+        box-shadow: 0 0 25px rgba(255, 215, 0, 0.9), 0 0 45px rgba(255, 215, 0, 0.6);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.2);
+    }
+}
+
+/* =========================================================
+   4. SECTION 2: MENU & KERANJANG STYLING
+   ========================================================= */
+/* Card Menu */
 .card {
-    animation: meluncurNaik 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-    border: 1px solid rgba(255, 215, 0, 0.3) !important;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .card:hover {
-    transform: translateY(-8px) !important;
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.7), 0 0 50px rgba(255, 215, 0, 0.4) !important;
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(241, 196, 15, 0.25) !important;
 }
 
-@keyframes meluncurNaik {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.card img {
+    transition: transform 0.5s ease;
 }
 
+.card:hover img {
+    transform: scale(1.06);
+}
+
+/* Qty Input Control */
+.qty-control .btn {
+    padding: 2px 8px;
+    font-size: 12px;
+    line-height: 1;
+    transition: all 0.2s ease;
+}
+
+.qty-control .btn:hover {
+    background-color: #ffc107 !important;
+    color: #000 !important;
+    box-shadow: 0 0 8px rgba(255, 193, 7, 0.8);
+}
+
+.qty-control input::-webkit-outer-spin-button,
+.qty-control input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Card Footer & Tombol Aksi */
 .card-footer-custom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15px;
-}
-
-.card-footer-custom .harga {
-    font-weight: bold;
-    color: #333;
 }
 
 .btn-beli {
-    background-color: #e7a007;
-    color: white !important;
-    text-decoration: none;
-    padding: 6px 15px;
+    background: linear-gradient(135deg, #e7a007, #f1c40f);
+    color: #382602 !important;
+    padding: 7px 18px;
     border-radius: 20px;
     font-size: 14px;
     font-weight: bold;
-    transition: background 0.2s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(231, 160, 7, 0.3);
+    transition: all 0.3s ease;
 }
 
 .btn-beli:hover {
-    background-color: #06bb21;
-    transform: scale(1.05);
+    background: linear-gradient(135deg, #06bb21, #2ecc71);
+    color: #fff !important;
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.6);
 }
 
 .btn-batal {
     background-color: #dc3545;
     color: white !important;
-    text-decoration: none;
     padding: 5px 12px;
     border-radius: 4px;
     font-size: 13px;
     font-weight: bold;
     border: none;
     cursor: pointer;
-    margin-right: 5px;
-    display: inline-block;
+    transition: all 0.2s ease;
 }
 
 .btn-batal:hover {
     background-color: #bd2130;
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.6);
 }
 
-.btn-pesan {
-    background-color: #28a745;
-    color: white !important;
-    text-decoration: none;
-    padding: 5px 12px;
-    border-radius: 4px;
-    font-size: 13px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
+/* Stiker Jaminan Kualitas */
+.badge-stiker-title {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #ffd700;
+    font-weight: 700;
     display: inline-block;
+    padding: 6px 18px;
+    background: rgba(241, 196, 15, 0.1);
+    border: 1px solid rgba(241, 196, 15, 0.4);
+    border-radius: 30px;
+    box-shadow: 0 0 12px rgba(241, 196, 15, 0.2);
 }
 
-.btn-pesan:hover {
-    background-color: #218838;
+.stiker-modern-card {
+    position: relative;
+    background: rgba(56, 38, 2, 0.85);
+    border: 1px solid rgba(241, 196, 15, 0.3);
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.4s ease;
 }
 
+.stiker-modern-card:hover {
+    transform: translateY(-8px);
+    border-color: #ffd700;
+    box-shadow: 0 10px 30px rgba(241, 196, 15, 0.3), 0 0 15px rgba(255, 215, 0, 0.2);
+}
 
+.stiker-modern-card:hover .stiker-icon-circle {
+    transform: scale(1.15) rotate(10deg);
+}
 
+.stiker-glow-line {
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ffd700, transparent);
+    transition: left 0.6s ease;
+}
 
+.stiker-modern-card:hover .stiker-glow-line {
+    left: 100%;
+}
 
+.stiker-title { color: #ffffff; font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+.stiker-text { color: #ffeaa7; font-size: 13px; line-height: 1.6; margin-bottom: 0; opacity: 0.85; }
 
-/*tentang*/
+/* =========================================================
+   5. SECTION 3: TENTANG KAMI STYLING
+   ========================================================= */
+#page-tentang {
+    position: relative;
+    --foto-bg-tentang: url("img/l.png");
+    
+    background: linear-gradient(rgba(18, 12, 2, 0.65), rgba(18, 12, 2, 0.65)), var(--foto-bg-tentang);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top: 1px solid rgba(255, 215, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 20px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
 
-
-/* Teks Gradasi Emas */
 .text-gradient-emas {
     background: linear-gradient(135deg, #ffffff 0%, #ffeaa7 50%, #f1c40f 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* Kotak Fitur Minimalis Gelap */
 .feature-box-modern {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 215, 0, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 215, 0, 0.25);
     padding: 15px;
     border-radius: 12px;
     text-align: center;
@@ -225,12 +379,12 @@
 }
 
 .feature-box-modern:hover {
-    background: rgba(241, 196, 15, 0.08);
-    border-color: #f1c40f;
-    transform: translateY(-5px);
+    background: rgba(255, 215, 0, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(241, 196, 15, 0.3);
 }
 
-/* Struktur Grid Foto Bertumpuk Modern */
+/* Layout Galeri Grid Foto */
 .modern-grid-wrapper {
     position: relative;
     width: 100%;
@@ -242,121 +396,60 @@
     border-radius: 20px;
     overflow: hidden;
     border: 2px solid rgba(241, 196, 15, 0.4);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-    transition: transform 0.4s ease, z-index 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    transition: transform 0.4s ease;
 }
 
-/* Aturan Foto Utama */
-.main-photo {
-    width: 75%;
-    height: 350px;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
+.main-photo { width: 75%; height: 350px; top: 0; left: 0; }
+.sub-photo { width: 55%; height: 240px; bottom: 20px; right: 0; }
 
-.main-photo img {
-    width: 100%;
-    height: 100%;
+.main-photo img, .sub-photo img {
+    width: 100%; 
+    height: 100%; 
     object-fit: cover;
 }
 
-/* Aturan Foto Kedua (Menumpuk di Kanan Bawah) */
-.sub-photo {
-    width: 55%;
-    height: 240px;
-    bottom: 20px;
-    right: 0;
-    z-index: 2;
-}
-
-.sub-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Efek Hover Saling Silang */
 .photo-card:hover {
-    transform: scale(1.05) translateY(-5px);
-    border-color: #f1c40f;
-    box-shadow: 0 25px 50px rgba(241, 196, 15, 0.3);
-    z-index: 3;
+    transform: scale(1.03);
+    border-color: #ffd700;
 }
 
-/* Tag Melayang ala Glassmorphism */
 .floating-glass-tag {
     position: absolute;
     top: 40px;
     right: 15%;
-    background: rgba(56, 38, 2, 0.8);
+    background: rgba(56, 38, 2, 0.85);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border: 1px solid #f1c40f;
     padding: 12px 20px;
     border-radius: 15px;
-    z-index: 4;
     text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    animation: gerakTag 3s ease-in-out infinite alternate;
+    box-shadow: 0 0 20px rgba(241, 196, 15, 0.4);
+    animation: floatAnimation 3s infinite alternate ease-in-out;
 }
 
-@keyframes gerakTag {
-    from { transform: translateY(0); }
-    to { transform: translateY(-10px); }
+@keyframes floatAnimation {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-12px); }
 }
 
-.home-stats-wrapper {
-    background: rgba(56, 38, 2, 0.6) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 215, 0, 0.3);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 
-                inset 0 0 15px rgba(241, 196, 15, 0.1);
-    animation: melayangStats 3s ease-in-out infinite alternate;
-}
-
-.border-warning-50 {
-    border-color: rgba(241, 196, 15, 0.3) !important;
-}
-
-@keyframes melayangStats {
-    from {
-        transform: translateY(0);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    }
-    to {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 35px rgba(241, 196, 15, 0.2);
-    }
-}
-
-
-
-
-
-
-/*kontak*/
-
-
-.kontak-info-card, .kontak-form-card {
+/* =========================================================
+   6. SECTION 4: KONTAK & FOOTER STYLING
+   ========================================================= */
+.kontak-info-card, .kontak-form-card, .peta-wrapper-card {
     background: rgba(56, 38, 2, 0.6) !important;
     backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 215, 0, 0.2);
     border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-    height: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .btn-kontak-aksi {
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 215, 0, 0.2);
     border-radius: 12px;
     padding: 15px;
     margin-bottom: 15px;
@@ -372,33 +465,31 @@
     text-align: center;
 }
 
-.btn-kontak-aksi small {
-    color: rgba(255, 255, 255, 0.5);
-    display: block;
-    margin-top: 2px;
+/* Hover Kontak Per-Platform */
+.btn-kontak-aksi:nth-child(2):hover {
+    background: rgba(40, 167, 69, 0.2) !important;
+    border-color: #28a745 !important;
+    transform: translateX(8px);
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.5) !important;
 }
 
-/* Hover Effects berdasarkan warna brand ikon */
-.btn-kontak-aksi.wa-color:hover {
-    background: rgba(40, 167, 69, 0.15);
-    border-color: #28a745;
-    box-shadow: 0 0 15px rgba(40, 167, 69, 0.3);
-    transform: translateX(5px);
+.btn-kontak-aksi:nth-child(3):hover {
+    background: rgba(23, 162, 184, 0.2) !important;
+    border-color: #17a2b8 !important;
+    transform: translateX(8px);
+    box-shadow: 0 0 15px rgba(23, 162, 184, 0.6) !important;
 }
-.btn-kontak-aksi.tel-color:hover {
-    background: rgba(0, 123, 255, 0.15);
-    border-color: #007bff;
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
-    transform: translateX(5px);
-}
-.btn-kontak-aksi.maps-color:hover {
-    background: rgba(238, 82, 83, 0.15);
-    border-color: #ee5253;
-    box-shadow: 0 0 15px rgba(ee, 52, 53, 0.3);
-    transform: translateX(5px);
-}
+.btn-kontak-aksi:nth-child(3):hover i { color: #17a2b8 !important; }
 
-/* Form Input Style */
+.btn-kontak-aksi:nth-child(4):hover {
+    background: rgba(255, 193, 7, 0.2) !important;
+    border-color: #ffc107 !important;
+    transform: translateX(8px);
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.6) !important;
+}
+.btn-kontak-aksi:nth-child(4):hover i { color: #ffc107 !important; }
+
+/* Form Elements */
 .form-control-custom {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 215, 0, 0.2);
@@ -411,9 +502,9 @@
 }
 
 .form-control-custom:focus {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: #f1c40f;
-    box-shadow: 0 0 10px rgba(241, 196, 15, 0.3);
+    border-color: #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .btn-kirim-form {
@@ -426,125 +517,18 @@
     font-weight: bold;
     margin-top: 15px;
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(241, 196, 15, 0.4);
     transition: all 0.3s ease;
 }
 
 .btn-kirim-form:hover {
-    background: #ffffff;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
     transform: translateY(-2px);
-}
-
-
-/*peta*/
-
-.peta-wrapper-card {
-    background: rgba(56, 38, 2, 0.6) !important;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 215, 0, 0.3);
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 20px rgba(241, 196, 15, 0.7);
 }
 
 .responsive-map-container {
     border-radius: 12px;
     overflow: hidden;
     border: 2px solid rgba(241, 196, 15, 0.4);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-.responsive-map-container iframe {
-    display: block;
-    width: 100%;
-}
-
-
-
-/*stiker*/
-
-.border-top.border-warning-25 {
-    border-top: 1px dashed rgba(241, 196, 15, 0.25) !important;
-}
-
-.badge-stiker-title {
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #bd8109;
-    font-weight: 700;
-    display: inline-block;
-    padding: 5px 15px;
-    background: rgba(241, 196, 15, 0.05);
-    border: 1px solid rgba(241, 196, 15, 0.2);
-    border-radius: 30px;
-}
-
-.stiker-modern-card {
-    position: relative;
-    background: rgba(56, 38, 2, 0.95);
-    border: 1px solid rgba(241, 196, 15, 0.3);
-    border-radius: 16px;
-    padding: 30px 20px;
-    text-align: center;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-}
-
-.stiker-icon-circle {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #ffd700, #f1c40f);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px auto;
-    color: #382602;
-    font-size: 24px;
-    box-shadow: 0 0 20px rgba(241, 196, 15, 0.4);
-    transition: transform 0.4s ease;
-}
-
-.stiker-title {
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    letter-spacing: 0.5px;
-}
-
-.stiker-text {
-    color: #ffeaa7;
-    font-size: 13px;
-    line-height: 1.6;
-    margin-bottom: 0;
-    opacity: 0.8;
-}
-
-.stiker-glow-line {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, #f1c40f, transparent);
-    transform: scaleX(0);
-    transition: transform 0.4s ease;
-}
-
-.stiker-modern-card:hover {
-    transform: translateY(-10px);
-    border-color: #f1c40f;
-    box-shadow: 0 15px 35px rgba(241, 196, 15, 0.2), 0 0 15px rgba(241, 196, 15, 0.2);
-}
-
-.stiker-modern-card:hover .stiker-icon-circle {
-    transform: rotate(360deg) scale(1.1);
-}
-
-.stiker-modern-card:hover .stiker-glow-line {
-    transform: scaleX(1);
+    box-shadow: 0 0 20px rgba(241, 196, 15, 0.2);
 }
