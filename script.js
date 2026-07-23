@@ -1,12 +1,4 @@
-/* =========================================================
-   1. GLOBAL & NAVIGATION SYSTEM (NAVBAR & SINGLE PAGE VIEW)
-   ========================================================= */
-
-/**
- * Berpindah antar bagian/halaman pada Single Page Application
- */
 function pindahHalaman(namaHalaman, keKeranjang = false) {
-    // Sembunyikan seluruh tampilan halaman
     document.querySelectorAll('.page-view').forEach(function (el) {
         el.classList.remove('active');
     });
@@ -18,29 +10,28 @@ function pindahHalaman(namaHalaman, keKeranjang = false) {
         target.classList.add('active');
     }
 
-    // Perbarui status 'active' pada link menu navbar
     document.querySelectorAll('.nav-link-page').forEach(function (link) {
         const isActive = link.getAttribute('data-page') === targetNama;
         link.classList.toggle('active', isActive);
     });
 
-    // Atur auto-scroll
+    // auto-scroll otomatis
     if (keKeranjang || namaHalaman === 'menu-keranjang') {
         const sectionKeranjang = document.getElementById('section-keranjang');
         if (sectionKeranjang) {
-            sectionKeranjang.scrollIntoView({ behavior: 'smooth' });
+            sectionKeranjang.scrollIntoView({ behavior: 'smooth' }); //bergulir dengan mulus ke tabel keranjang
         }
     } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Tutup menu pada tampilan mobile (collapsible navbar)
+    // Tutup otomatis menu navbar pada tampilan HP
     if (typeof $ !== 'undefined' && $('#navbarLinks').length) {
         $('#navbarLinks').collapse('hide');
     }
 }
 
-// Event Listener Klik Navigasi (Navbar & Tombol aksi yang merujuk data-page)
+// Menambahkan event klik pada seluruh tombol/link yang memiliki atribut 'data-page'
 document.querySelectorAll('[data-page]').forEach(function (el) {
     el.addEventListener('click', function (e) {
         e.preventDefault();
@@ -49,11 +40,8 @@ document.querySelectorAll('[data-page]').forEach(function (el) {
     });
 });
 
-/* =========================================================
-   2. SECTION 1: HOME FUNCTIONS
-   ========================================================= */
-
-// Inisialisasi Carousel
+/* SECTION 1: HOME FUNCTIONS */
+// slide auto play
 $(document).ready(function() {
     $('#homeCarousel').carousel({
         interval: 3500,
@@ -61,27 +49,20 @@ $(document).ready(function() {
     });
 });
 
-/* =========================================================
-   3. SECTION 2: MENU & KERANJANG FUNCTIONS
-   ========================================================= */
-
-/**
- * Mengubah jumlah porsi pada item menu (- / +)
- */
+/* SECTION 2: MENU & KERANJANG FUNCTIONS */
+// Mengubah jumlah porsi pada item menu (- / +)
 function ubahQty(button, delta) {
     const inputGroup = button.closest('.qty-control');
     const inputQty = inputGroup.querySelector('.input-qty');
     let currentValue = parseInt(inputQty.value) || 1;
-    
+// +/- Tidak bisa kurang dari 1
     currentValue += delta;
     if (currentValue < 1) currentValue = 1;
     
     inputQty.value = currentValue;
 }
 
-/**
- * Memperbarui badge jumlah pesanan di navbar
- */
+/* Memperbarui badge angka merah pada ikon keranjang di navbar atas */
 function updateJumlahKeranjangNavbar() {
     const tbody = document.getElementById('tabel-keranjang');
     const countBadge = document.getElementById('cart-count');
@@ -120,7 +101,7 @@ document.querySelectorAll('.btn-beli').forEach(button => {
             `;
             
             tbody.appendChild(row);
-            if (inputQty) inputQty.value = 1; // Reset qty
+            if (inputQty) inputQty.value = 1; 
             
             updateJumlahKeranjangNavbar();
             alert(`${namaMenu} (${porsi} Porsi) telah ditambahkan ke Pesanan Anda!`);
@@ -128,17 +109,13 @@ document.querySelectorAll('.btn-beli').forEach(button => {
     });
 });
 
-/**
- * Menghapus item dari keranjang
- */
+/* Menghapus item dari keranjang */
 function batalBeli(button) {
     button.closest('tr').remove();
     updateJumlahKeranjangNavbar();
 }
 
-/**
- * Memproses semua isi keranjang ke rangkuman teks lalu dialihkan ke Halaman Kontak
- */
+/* isi keranjang ke pesanan WA*/
 function prosesPesanSemua() {
     const tbody = document.getElementById('tabel-keranjang');
     const rows = tbody.querySelectorAll('tr');
@@ -163,8 +140,8 @@ function prosesPesanSemua() {
             daftarPesanan.push(`${index + 1}. ${detailMenu} = ${hargaTeks}`);
         }
     });
-
     const totalFormatted = "Rp " + totalHarga.toLocaleString('id-ID');
+
 
     const rangkumanPesan = `Halo Lesehan Om Jun, saya mau pesan:\n` +
                            `-----------------------------------\n` +
@@ -181,14 +158,13 @@ function prosesPesanSemua() {
         inputPesan.style.height = 'auto';
         inputPesan.style.height = (inputPesan.scrollHeight + 10) + 'px';
 
+        //Kursor langsung ke isi Nama
         const inputNama = document.getElementById('inputNama');
         if (inputNama) inputNama.focus();
     }
 }
 
-/* =========================================================
-   4. SECTION 4: KONTAK FUNCTIONS (INTEGRASI WHATSAPP)
-   ========================================================= */
+/* SECTION 4: KONTAK FUNCTIONS (INTEGRASI WHATSAPP) */
 
 const formWA = document.getElementById('formWhatsApp');
 if (formWA) {
@@ -199,6 +175,7 @@ if (formWA) {
         const pesan = document.getElementById('inputPesan').value.trim();
         const nomorWA = "6285363817372";
         
+        //Jika nama masih kosong
         if (!nama) {
             alert("Silakan masukkan Nama Lengkap Anda terlebih dahulu!");
             return;
