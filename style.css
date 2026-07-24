@@ -30,7 +30,7 @@ body {
     }
 }
 
-/* . NAVBAR STYLING */
+/*  NAVBAR STYLING */
 
 
 .navbar {
@@ -77,9 +77,9 @@ body {
     transition: transform 6s ease;
 }
 
-.slide-1 { background-image: url("img/l.png"); }
+.slide-1 { background-image: url("img/kar.jpeg"); }
 .slide-2 { background-image: url("img/bakar.jpeg"); }
-.slide-3 { background-image: url("img/kar.jpeg"); }
+.slide-3 { background-image: url("img/teh.jpg"); }
 
 .hero-overlay {
     position: absolute;
